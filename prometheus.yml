@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s          # Chu kỳ thu thập metrics (5s để theo dõi sát thời gian thực)
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "noc-backend"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["backend:8080"]
